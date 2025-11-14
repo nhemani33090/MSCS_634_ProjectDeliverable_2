@@ -121,14 +121,19 @@ A simple Matplotlib bar chart is used to compare model performance visually (e.g
 | **Ridge Regression (α = 1.0)** | 0.573317 | 14.102260 | 358.593324 | 18.936561 | 0.570074 | 0.020823 | 19.399271 | 0.435145 |
 | **Lasso Regression (α = 0.001)** | 0.573318 | 14.102610 | 358.592299 | 18.936533 | 0.570070 | 0.020822 | 19.399364 | 0.434977 |
 
-### **Interpretation of Model Performance**
-- All models perform **nearly identically**  
-- This indicates:
-  - No strong multicollinearity  
-  - Categorical encoding stabilizes model  
-  - Regularization (Ridge/Lasso) doesn't drastically change coefficients  
+## 📝 Model Evaluation Summary (Which Model Performed Best?)
 
-A test **R² ≈ 0.573** is strong for retail profit prediction, which is inherently noisy.
+Across all three regression models — **Linear Regression**, **Ridge Regression**, and **Lasso Regression** — performance was nearly identical. Each model achieved a **test R² of approximately 0.573**, with similar MAE, MSE, and RMSE values. Cross-validation results were also stable, with an average **cross-validated R² of around 0.57** and low standard deviation across folds, indicating strong generalization and no overfitting.
+
+Although all models performed similarly, **Ridge Regression** can be considered the best overall option because it provides slightly more stable coefficients and reduces the impact of multicollinearity while maintaining equal predictive accuracy. 
+
+Coefficient analysis revealed several key insights about profit drivers:
+- **Sales** is the strongest positive predictor of profit.
+- **Discount** is one of the strongest negative predictors.
+- High-margin sub-categories (e.g., *Copiers*, *Furnishings*, *Binders*) contribute positively to profit.
+- Low-margin sub-categories (e.g., *Tables*, *Bookcases*, *Supplies*) consistently reduce profit.
+
+These findings confirm that profit is heavily influenced by pricing strategy, product category, and sales volume — insights that will inform the classification, clustering, and association-rule tasks in Deliverable 3.
 
 ---
 
