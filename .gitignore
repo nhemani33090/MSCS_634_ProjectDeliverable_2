@@ -1,0 +1,13 @@
+# OS junk
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Env vars (just in case)
+.env
